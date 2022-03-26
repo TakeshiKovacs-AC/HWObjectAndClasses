@@ -107,7 +107,7 @@ class WallServiceTest {
         val result = service.update(update)
 
 //         assert
-        assertTrue(result)
+        assertFalse(result)
     }
 
     @Test
