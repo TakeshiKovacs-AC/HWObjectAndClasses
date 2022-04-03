@@ -1,3 +1,4 @@
+
 class WallService {
     var posts = emptyArray<Post>()
 
@@ -13,9 +14,9 @@ class WallService {
                     id = post.id, fromID = post.fromID, text = post.text,
                     replyOwnerID = post.replyOwnerID, replyPostID = post.replyPostID, friendsOnly = post.friendsOnly,
                     comments = post.comments, copyright = post.copyright, likes = post.likes, reposts = post.reposts,
-                    views = post.views, postType = post.postType, canPin = post.canPin, canDelete = post.canDelete,
-                    canEdit = post.canEdit, isPinned = post.isPinned, markedAsAds = post.markedAsAds,
-                    isFavorite = post.isFavorite, donut = post.donut
+                    views = post.views, postType = post.postType, postSource = post.postSource, geo = post.geo,
+                    signerID = post.signerID, attachment = post.attachment, canPin = post.canPin, canDelete = post.canDelete,
+                    canEdit = post.canEdit, isPinned = post.isPinned, markedAsAds = post.markedAsAds, isFavorite = post.isFavorite
                 )
                 return true
             }

@@ -1,3 +1,5 @@
+package postMembers
+
 data class Copyright(
     val id: Int,
     val link: String,

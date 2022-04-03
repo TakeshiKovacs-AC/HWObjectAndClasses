@@ -1,4 +1,6 @@
 
+import attachments.*
+import postMembers.*
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -23,13 +25,16 @@ class WallServiceTest {
         val repo = Reposts(86, false)
         val view = 65
         val type = PostType.COPY
+        val source = PostSource(PostSource.Type.VK, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "euheude")
+        val geography = Geo("Place", "kuyt", "Place")
+        val sign = 56
+        val attach = PhotoAttachment(Photo(), 65, 98, 93, 60)
         val pin = false
         val delete = true
         val edit = false
         val pinned = false
         val marked = true
         val favor = false
-        val don = Donut(false, Donut.payedDurationTypes.DAY, true, true, Donut.EditModeTypes.ALL)
 
 //        act
 
@@ -49,13 +54,16 @@ class WallServiceTest {
                 reposts = repo,
                 views = view,
                 postType = type,
+                postSource = source,
+                geo = geography,
+                signerID = sign,
+                attachment = attach,
                 canPin = pin,
                 canDelete = delete,
                 canEdit = edit,
                 isPinned = pinned,
                 markedAsAds = marked,
-                isFavorite = favor,
-                donut = don
+                isFavorite = favor
             )
         )
 //        assert
@@ -76,32 +84,36 @@ class WallServiceTest {
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
-            true, false, false, true, true, false,
-            Donut(false, Donut.payedDurationTypes.NONE, false, false, Donut.EditModeTypes.DURATION))
+            PostSource(PostSource.Type.WIDGET, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "htyh"),
+            Geo("fff", "tyui", "pla"), 48, AudioAttachment(Audio(), 567, 789, 756, 63),
+            true, false, true, false, true, true)
         )
         service.add(Post(
             (1..1000).random(), 456, 893, 1647974707, "This is the 1st post here",
             903, 209, true, Comments(4, true, false, true, false),
             Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,
-            PostType.POST, true, true, true, true, false, false,
-            Donut(true, Donut.payedDurationTypes.WEEK, true, true, Donut.EditModeTypes.DURATION))
+            PostType.POST, PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.LIKE, "yhgfr"),
+            Geo("frt", "te5", "9ik"), 34, VideoAttachment(Video(), 67, 90, 37, 64),
+            false, false, true, false, true, false)
         )
         service.add(Post(
             234, 487, 309, 1648092229, "This is the 3rd post here",
             200, 222, false, Comments(9, false, true, false, true),
             Copyright(101, "www.dom2.dom", "Official web site of Dom2", "page"),
             Likes(40, true, true, false), Reposts(0, false), 43, PostType.COPY,
-            false, false, true, true, false, true,
-            Donut(false, Donut.payedDurationTypes.NONE, false, false, Donut.EditModeTypes.DURATION))
+            PostSource(PostSource.Type.RSS, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "ytu"),
+            Geo("ft67", "7yth", "rtgf"), 36, NoteAttachment(Note(), 76, 98, 46, 80),
+            false, true, true, false,false, true)
         )
 
         val update = Post(
             234, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
             567, true, Comments(19, true, true, true, false),
             Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
-            Reposts(30, true), 298, PostType.POST, true, true, true, false, false,
-            false, Donut(true, Donut.payedDurationTypes.YEAR, true, true, Donut.EditModeTypes.ALL))
+            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.POLL, "yuj"),
+            Geo("efwe", "uh76", "36guejkdm"), 23, DocAttachment(Doc(), 78, 93, 36, 90),
+            false, false, true, true, true, true)
 
 
         val result = service.update(update)
@@ -124,32 +136,36 @@ class WallServiceTest {
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
-            true, false, false, true, true, false,
-            Donut(false, Donut.payedDurationTypes.NONE, false, false, Donut.EditModeTypes.DURATION))
+            PostSource(PostSource.Type.WIDGET, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "htyh"),
+            Geo("fff", "tyui", "pla"), 48, AudioAttachment(Audio(), 567, 789, 756, 63),
+            true, false, true, false, true, true)
         )
         service.add(Post(
             (1..1000).random(), 456, 893, 1647974707, "This is the 1st post here",
             903, 209, true, Comments(4, true, false, true, false),
             Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,
-            PostType.POST, true, true, true, true, false, false,
-            Donut(true, Donut.payedDurationTypes.WEEK, true, true, Donut.EditModeTypes.DURATION))
+            PostType.POST, PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.LIKE, "yhgfr"),
+            Geo("frt", "te5", "9ik"), 36, VideoAttachment(Video(), 67, 90, 37, 64),
+            false, false, true, false, true, false)
         )
         service.add(Post(
             235, 487, 309, 1648092229, "This is the 3rd post here",
             200, 222, false, Comments(9, false, true, false, true),
             Copyright(101, "www.dom2.dom", "Official web site of Dom2", "page"),
             Likes(40, true, true, false), Reposts(0, false), 43, PostType.COPY,
-            false, false, true, true, false, true,
-            Donut(false, Donut.payedDurationTypes.NONE, false, false, Donut.EditModeTypes.DURATION))
+            PostSource(PostSource.Type.RSS, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "ytu"),
+            Geo("ft67", "7yth", "rtgf"), 36, NoteAttachment(Note(), 76, 98, 46, 80),
+            false, true, true, false,false, true)
         )
 
         val update = Post(
             234, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
             567, true, Comments(19, true, true, true, false),
             Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
-            Reposts(30, true), 298, PostType.POST, true, true, true, false, false,
-            false, Donut(true, Donut.payedDurationTypes.YEAR, true, true, Donut.EditModeTypes.ALL))
+            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.POLL, "yuj"),
+            Geo("efwe", "uh76", "36guejkdm"), 23, DocAttachment(Doc(), 78, 93, 36, 90),
+            false, false, true, true, true, true)
 
 
         val result = service.update(update)

@@ -1,3 +1,5 @@
+package postMembers
+
 data class Comments(
     val count: Int,            //кол-во комментов
     val canPost: Boolean,      //может ли текущий пользователь коммент запись

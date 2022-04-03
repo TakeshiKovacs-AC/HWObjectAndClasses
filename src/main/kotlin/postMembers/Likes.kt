@@ -1,3 +1,5 @@
+package postMembers
+
 data class Likes(
     val count: Int,           //кол-во лайков
     val userLikes: Boolean,   //наличие лайка от текущего польз-ля
