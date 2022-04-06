@@ -11,7 +11,7 @@ class WallServiceTest {
 
 //       arrange
 
-        val idChecked = (1..1000).random()
+        val idChecked = 0
         val owner = 234
         val from = 456
         val time = 4567325630
@@ -39,7 +39,7 @@ class WallServiceTest {
 //        act
 
         val service = WallService()
-        service.add(Post(
+        val addedPost = service.add(Post(
                 id = idChecked,
                 ownerID = owner,
                 fromID = from,
@@ -67,7 +67,7 @@ class WallServiceTest {
             )
         )
 //        assert
-        assertNotEquals(0, idChecked)
+        assertNotEquals(0, addedPost.id)
     }
 
     @Test
@@ -80,7 +80,7 @@ class WallServiceTest {
 //        act
 
         service.add(Post(
-            (1..1000).random(), 956, 299, 1648037000, "This is the 2nd post here",
+            0, 956, 299, 1648037000, "This is the 2nd post here",
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
@@ -89,7 +89,7 @@ class WallServiceTest {
             true, false, true, false, true, true)
         )
         service.add(Post(
-            (1..1000).random(), 456, 893, 1647974707, "This is the 1st post here",
+            0, 456, 893, 1647974707, "This is the 1st post here",
             903, 209, true, Comments(4, true, false, true, false),
             Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,
@@ -108,7 +108,7 @@ class WallServiceTest {
         )
 
         val update = Post(
-            234, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
+            3, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
             567, true, Comments(19, true, true, true, false),
             Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
             Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.POLL, "yuj"),
@@ -132,7 +132,7 @@ class WallServiceTest {
 //        act
 
         service.add(Post(
-            (1..1000).random(), 956, 299, 1648037000, "This is the 2nd post here",
+            0, 956, 299, 1648037000, "This is the 2nd post here",
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
@@ -141,7 +141,7 @@ class WallServiceTest {
             true, false, true, false, true, true)
         )
         service.add(Post(
-            (1..1000).random(), 456, 893, 1647974707, "This is the 1st post here",
+            0, 456, 893, 1647974707, "This is the 1st post here",
             903, 209, true, Comments(4, true, false, true, false),
             Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,

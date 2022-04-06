@@ -2,7 +2,7 @@ import attachments.Attachments
 import postMembers.*
 
 data class Post(
-    val id: Int = 0,  //идентификатор записи
+    var id: Int,  //идентификатор записи
     val ownerID: Int,   //идентификатор владельца стены
     val fromID: Int,   //идентификатор автора записи
     val date: Long,     //время публикации
