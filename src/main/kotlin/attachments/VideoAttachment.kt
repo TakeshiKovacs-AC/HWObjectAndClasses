@@ -1,10 +1,6 @@
 package attachments
 
-class VideoAttachment(
-    override val type: Video,
-    override val id: Int,
-    override val albumID: Int,
-    override val ownerID: Int,
-    override val userID: Int
-): Attachments {
-}
+data class VideoAttachment(
+    override val type: String = "video",
+    override val currentType: Video = Video(0,0,0,0)
+): Attachments

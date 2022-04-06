@@ -1,9 +1,6 @@
 package attachments
 
-class DocAttachment(
-    override val type: Doc,
-    override val id: Int,
-    override val albumID: Int,
-    override val ownerID: Int,
-    override val userID: Int
+data class DocAttachment(
+    override val type: String = "doc",
+    override val currentType: Doc = Doc(0,0,0,0)
 ): Attachments

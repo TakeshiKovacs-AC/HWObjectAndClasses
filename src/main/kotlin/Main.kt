@@ -6,14 +6,14 @@ fun main() {
     val wallService = WallService()
 
     val post0 = Post(
-        0, 95, 29, 1648037700, "This is the 0 post here",
+        0, 95, 29, 1648037700, "This is ZERO post here",
         37, 74, true, Comments(9, true, true, false, false),
         Copyright(34, "rrrr", "bbbb", "web site"),
         Likes(9, false, true, true), Reposts(9, true), 978, PostType.REPLY,
         PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
         Geo("Тип места", "48 градусов западной долготы", "Деревня"), 85,
-        AudioAttachment(Audio(), 56, 78, 76, 67),
-        false, true, true, true, true, true
+        VideoAttachment("Kitty eating pancakes", Video(35, 97, 65, 24)),
+        true, true, false,false, true, true
     )
     val post1 = Post(
         0, 956, 299, 1648037000, "This is the 1nd post here",
@@ -22,8 +22,8 @@ fun main() {
         Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
         PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
         Geo("Тип места", "48 градусов западной долготы", "Деревня"), 45,
-        AudioAttachment(Audio(), 567, 789, 756, 63),
-        false, true, true, true, true, true
+        AudioAttachment("Sinatra original record", Audio(65, 83, 57, 90)), false,
+        true, true, true, true, true
     )
 
     val post2 = Post(
@@ -32,8 +32,9 @@ fun main() {
         Copyright(678, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
         Likes(89, true, true, false), Reposts(4, false), 107,
         PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.PROFILE_ACTIVITY, "yht"),
-        Geo("yth", "re34", "5tyu"), 29, VideoAttachment(Video(), 67, 90, 37, 64),
-        false, false, true, false, false, false
+        Geo("yth", "re34", "5tyu"), 29,
+        NoteAttachment("My notebook", Note( 90, 37, 64, 80)), false,
+        false, true, false, false, false
     )
 
     val post3 = Post(
@@ -42,7 +43,8 @@ fun main() {
         Copyright(207, "www.dom2.dom", "Official web site of Dom2", "page"),
         Likes(40, true, true, false), Reposts(0, false), 43, PostType.COPY,
         PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.POLL, "ymmm"),
-        Geo("typ0", "f4582", "gft6"), 11, NoteAttachment(Note(), 76, 98, 46, 80),
+        Geo("typ0", "f4582", "gft6"), 11,
+        DocAttachment("Vasily's diploma", Doc(76, 98, 46, 80)),
         false, true,false, true, false, true
     )
 
@@ -51,7 +53,8 @@ fun main() {
         567, true, Comments(19, true, true, true, false),
         Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
         Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.POLL, "ytu"),
-        Geo("op[[", "dfg5", "yt690"), 988, DocAttachment(Doc(), 78, 93, 36, 90),
+        Geo("op[[", "dfg5", "yt690"), 988,
+        PhotoAttachment("Lebron & AD picture", Photo( 78, 93, 36, 90)),
         false, false, true, true, true, true
     )
 

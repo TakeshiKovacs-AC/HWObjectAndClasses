@@ -28,7 +28,7 @@ class WallServiceTest {
         val source = PostSource(PostSource.Type.VK, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "euheude")
         val geography = Geo("Place", "kuyt", "Place")
         val sign = 56
-        val attach = PhotoAttachment(Photo(), 65, 98, 93, 60)
+        val attach = PhotoAttachment("Big Bag", Photo(65, 98, 93, 60))
         val pin = false
         val delete = true
         val edit = false
@@ -80,39 +80,43 @@ class WallServiceTest {
 //        act
 
         service.add(Post(
-            0, 956, 299, 1648037000, "This is the 2nd post here",
+            0, 956, 299, 1648037000, "This is the 1nd post here",
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
-            PostSource(PostSource.Type.WIDGET, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "htyh"),
-            Geo("fff", "tyui", "pla"), 48, AudioAttachment(Audio(), 567, 789, 756, 63),
-            true, false, true, false, true, true)
+            PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
+            Geo("Тип места", "48 градусов западной долготы", "Деревня"), 45,
+            AudioAttachment("Sinatra original record", Audio(65, 83, 57, 90)), false,
+            true, true, true, true, true)
         )
         service.add(Post(
-            0, 456, 893, 1647974707, "This is the 1st post here",
+            0, 456, 893, 1647974707, "This is the 2st post here",
             903, 209, true, Comments(4, true, false, true, false),
-            Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
+            Copyright(678, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,
-            PostType.POST, PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.LIKE, "yhgfr"),
-            Geo("frt", "te5", "9ik"), 34, VideoAttachment(Video(), 67, 90, 37, 64),
-            false, false, true, false, true, false)
+            PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.PROFILE_ACTIVITY, "yht"),
+            Geo("yth", "re34", "5tyu"), 29,
+            NoteAttachment("My notebook", Note( 90, 37, 64, 80)), false,
+            false, true, false, false, false)
         )
         service.add(Post(
             234, 487, 309, 1648092229, "This is the 3rd post here",
             200, 222, false, Comments(9, false, true, false, true),
-            Copyright(101, "www.dom2.dom", "Official web site of Dom2", "page"),
+            Copyright(207, "www.dom2.dom", "Official web site of Dom2", "page"),
             Likes(40, true, true, false), Reposts(0, false), 43, PostType.COPY,
-            PostSource(PostSource.Type.RSS, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "ytu"),
-            Geo("ft67", "7yth", "rtgf"), 36, NoteAttachment(Note(), 76, 98, 46, 80),
-            false, true, true, false,false, true)
+            PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.POLL, "ymmm"),
+            Geo("typ0", "f4582", "gft6"), 11,
+            DocAttachment("Vasily's diploma", Doc(76, 98, 46, 80)),
+            false, true,false, true, false, true)
         )
 
         val update = Post(
             3, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
             567, true, Comments(19, true, true, true, false),
             Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
-            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.POLL, "yuj"),
-            Geo("efwe", "uh76", "36guejkdm"), 23, DocAttachment(Doc(), 78, 93, 36, 90),
+            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.POLL, "ytu"),
+            Geo("op[[", "dfg5", "yt690"), 988,
+            PhotoAttachment("Lebron & AD picture", Photo( 78, 93, 36, 90)),
             false, false, true, true, true, true)
 
 
@@ -132,39 +136,43 @@ class WallServiceTest {
 //        act
 
         service.add(Post(
-            0, 956, 299, 1648037000, "This is the 2nd post here",
+            0, 956, 299, 1648037000, "This is the 1nd post here",
             376, 744, true, Comments(7, true, true, false, false),
             Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
             Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
-            PostSource(PostSource.Type.WIDGET, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "htyh"),
-            Geo("fff", "tyui", "pla"), 48, AudioAttachment(Audio(), 567, 789, 756, 63),
-            true, false, true, false, true, true)
+            PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
+            Geo("Тип места", "48 градусов западной долготы", "Деревня"), 45,
+            AudioAttachment("Sinatra original record", Audio(65, 83, 57, 90)), false,
+            true, true, true, true, true)
         )
         service.add(Post(
-            0, 456, 893, 1647974707, "This is the 1st post here",
+            0, 456, 893, 1647974707, "This is the 2st post here",
             903, 209, true, Comments(4, true, false, true, false),
-            Copyright(209, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
+            Copyright(678, "www.leningrad-spb.ru", "Official web-site of Leningrad", "web site"),
             Likes(89, true, true, false), Reposts(4, false), 107,
-            PostType.POST, PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.LIKE, "yhgfr"),
-            Geo("frt", "te5", "9ik"), 36, VideoAttachment(Video(), 67, 90, 37, 64),
-            false, false, true, false, true, false)
+            PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.PROFILE_ACTIVITY, "yht"),
+            Geo("yth", "re34", "5tyu"), 29,
+            NoteAttachment("My notebook", Note( 90, 37, 64, 80)), false,
+            false, true, false, false, false)
         )
         service.add(Post(
-            235, 487, 309, 1648092229, "This is the 3rd post here",
+            0, 487, 309, 1648092229, "This is the 3rd post here",
             200, 222, false, Comments(9, false, true, false, true),
-            Copyright(101, "www.dom2.dom", "Official web site of Dom2", "page"),
+            Copyright(207, "www.dom2.dom", "Official web site of Dom2", "page"),
             Likes(40, true, true, false), Reposts(0, false), 43, PostType.COPY,
-            PostSource(PostSource.Type.RSS, PostSource.Platform.ANDROID, PostSource.Data.PROFILE_PHOTO, "ytu"),
-            Geo("ft67", "7yth", "rtgf"), 36, NoteAttachment(Note(), 76, 98, 46, 80),
-            false, true, true, false,false, true)
+            PostSource(PostSource.Type.SMS, PostSource.Platform.WPHONE, PostSource.Data.POLL, "ymmm"),
+            Geo("typ0", "f4582", "gft6"), 11,
+            DocAttachment("Vasily's diploma", Doc(76, 98, 46, 80)),
+            false, true,false, true, false, true)
         )
 
         val update = Post(
             234, 333, 999, System.currentTimeMillis() / 1000, "This is the 4th post here", 500,
             567, true, Comments(19, true, true, true, false),
             Copyright(202, "www.github.com", "VCS", "web site"), Likes(150, true, true, true),
-            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.API, PostSource.Platform.IPHONE, PostSource.Data.POLL, "yuj"),
-            Geo("efwe", "uh76", "36guejkdm"), 23, DocAttachment(Doc(), 78, 93, 36, 90),
+            Reposts(30, true), 298, PostType.POST, PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.POLL, "ytu"),
+            Geo("op[[", "dfg5", "yt690"), 988,
+            PhotoAttachment("Lebron & AD picture", Photo( 78, 93, 36, 90)),
             false, false, true, true, true, true)
 
 

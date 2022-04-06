@@ -1,9 +1,6 @@
 package attachments
 
-class PhotoAttachment(
-    override val type: Photo,
-    override val id: Int,
-    override val albumID: Int,
-    override val ownerID: Int,
-    override val userID: Int
+data class PhotoAttachment(
+    override val type: String = "photo",
+    override val currentType: Photo = Photo(0,0,0,0)
 ): Attachments

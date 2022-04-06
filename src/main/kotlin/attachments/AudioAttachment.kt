@@ -1,10 +1,6 @@
 package attachments
 
-class AudioAttachment(
-    override val type: Audio,
-    override val id: Int,
-    override val albumID: Int,
-    override val ownerID: Int,
-    override val userID: Int
-): Attachments {
-}
+data class AudioAttachment(
+    override val type: String = "audio",
+    override val currentType: Audio = Audio(0,0,0,0)
+): Attachments
