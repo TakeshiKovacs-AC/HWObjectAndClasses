@@ -182,6 +182,70 @@ class WallServiceTest {
         assertFalse(result)
     }
 
+
+    @Test
+    fun addComment() {
+//        arrange
+
+        val service = WallService()
+
+//        act
+
+        val initialPost = service.add(Post(
+            0, 956, 299, 1648037000, "This is the 1nd post here",
+            376, 744, true, Comments(7, true, true, false, false),
+            Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
+            Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
+            PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
+            Geo("Тип места", "48 градусов западной долготы", "Деревня"), 45,
+            AudioAttachment("Sinatra original record", Audio(65, 83, 57, 90)), false,
+            true, true, true, true, true)
+        )
+
+        val initialComment = Comment(
+            456, 1, "Посмотрите какой милаш!",
+            PhotoAttachment("Котик кушает блинчики", Photo(78, 89, 33, 98)), (1..50).random()
+        )
+
+//      assert
+
+        assertEquals(initialPost.id, initialComment.postId)
+
+    }
+
+        @Test(expected = PostNotFoundException::class)
+            fun shouldThrow() {
+//        arrange
+
+            val service = WallService()
+
+//        act
+
+            val initialPost = service.add(Post(
+                0, 956, 299, 1648037000, "This is the 1nd post here",
+                376, 744, true, Comments(7, true, true, false, false),
+                Copyright(334, "www.svideteli_iegovy.ru", "Official web site of Svideteli", "web site"),
+                Likes(79, false, true, true), Reposts(8, true), 98, PostType.REPLY,
+                PostSource(PostSource.Type.WIDGET, PostSource.Platform.IPHONE, PostSource.Data.COMMENTS, "www.www.ru"),
+                Geo("Тип места", "48 градусов западной долготы", "Деревня"), 45,
+                AudioAttachment("Sinatra original record", Audio(65, 83, 57, 90)), false,
+                true, true, true, true, true)
+            )
+
+            val initialComment = Comment(
+                456, 2, "Посмотрите какой милаш!",
+                PhotoAttachment("Котик кушает блинчики", Photo(78, 89, 33, 98)), (1..50).random()
+            )
+
+
+
+//      assert
+
+            if (initialPost.id != initialComment.postId) {
+                throw PostNotFoundException("Post not found!")
+            }
+        }
+
 }
 
 
